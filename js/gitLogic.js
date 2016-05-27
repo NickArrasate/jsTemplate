@@ -8,7 +8,7 @@ exports.gitCall = function(username){
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
     console.log(response);
     $('.userAva').empty();
-    $('.userAva').append('<img src=' + response.avatar_url + "'>")
+    $('.userAva').append('<img src=' + response.avatar_url + "'>");
     $('.usernameDisplay').text(response.name);
     $('.followersDisplay').text(response.followers);
     $('.info').show();
