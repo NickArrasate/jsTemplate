@@ -25,30 +25,30 @@ var lib = require('bower-files')({
 
 gulp.task('cssBuild', function() {
   return gulp.src(['scss/*.scss'])
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/css'))
-    .pipe(browserSync.stream());
+  .pipe(sourcemaps.init())
+  .pipe(sass())
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./build/css'))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('concatInterface', function(){
   return gulp.src(['./js/*-interface.js'])
-    .pipe(concat('allconcat.js'))
-    .pipe(gulp.dest('./tmp'));
+  .pipe(concat('allconcat.js'))
+  .pipe(gulp.dest('./tmp'));
 });
 
 gulp.task('jsBrowserify', ['concatInterface'], function(){
   return browserify({ entries: ['./tmp/allconcat.js'] })
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(gulp.dest('./build/js'));
+  .bundle()
+  .pipe(source('app.js'))
+  .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('minifyScripts', ['jsBrowserify'], function(){
   return gulp.src("./build/js/app.js")
-    .pipe(uglify())
-    .pipe(gulp.dest('./build/js'));
+  .pipe(uglify())
+  .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task("clean", function() {
@@ -67,21 +67,21 @@ gulp.task("build", ['clean'], function() {
 
 gulp.task('jshint', function() {
   return gulp.src(['js/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
 });
 
 gulp.task('bowerJS', function () {
   return gulp.src(lib.ext('js').files)
-    .pipe(concat('vendor.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./build/js'));
+  .pipe(concat('vendor.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('bowerCSS', function () {
   return gulp.src(lib.ext('css').files)
-    .pipe(concat('vendor.css'))
-    .pipe(gulp.dest('./build/css'));
+  .pipe(concat('vendor.css'))
+  .pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
@@ -103,7 +103,7 @@ gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
   browserSync.reload();
 });
 
-gulp.task('indexBuild', ['build'], function(){
+gulp.task('htmlBuild', ['build'], function(){
   browserSync.reload();
 });
 

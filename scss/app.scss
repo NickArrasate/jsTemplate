@@ -1,0 +1,96 @@
+$blue: #94E0D9;
+$grey: #EDEDED;
+$button: #B566FF;
+$text: #5E5E5E;
+
+body{
+  background-color: $grey;
+}
+.info, .error {
+  display: none;
+}
+.button{
+  background-color: $button;
+  border: none;
+  text-align: center;
+  width: 120px;
+  box-shadow: 1px 3px 4px grey;
+  border-radius: 4px;
+  color: $grey;
+  font-weight: 300;;
+  font-size: 12pt;
+}
+img{
+  margin-top: 5px;
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+}
+.userContent{
+  padding-left: 10px;
+  margin-left: 15px;
+}
+.userAva {
+  width: 80px;
+  margin: auto;
+  padding: 0;
+}
+.username{
+    box-shadow: inset 0px 1px 4px grey;
+    padding-left: 6px;
+    background-color: $grey;
+    border-radius: 4px;
+    color: $text;
+}
+.getRepos {
+  margin-top: 6px;
+}
+.repos {
+  text-decoration: none;
+  text-align: center;
+  text-align: justify;
+  list-style: none;
+  border: 3px solid $text;
+  padding-bottom: 16px;
+  padding-top: 10px;
+  padding-right: 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+li {
+  margin-top: 4px;
+}
+.repos{
+display: none;
+}
+.info{
+  background-color: $blue;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: auto;
+  font-size: 12pt;
+  font-weight: bold;
+  color: $text;
+  border-radius: 8px;
+}
+.search {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom:16px;
+  color: $text;
+}
+.header{
+  background-color: $blue;
+  padding: 6px;
+  padding-left: 40px;
+  margin-top: 30epx;
+  border-radius: 8px;
+  box-shadow: 1px 3px 12px grey;
+}
+h2 {
+  margin-top: auto;
+  margin-bottom: 2px;
+  color: $text;
+}
