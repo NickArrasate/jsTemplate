@@ -6,7 +6,6 @@ exports.removeSpaces = function(username){
 };
 exports.gitCall = function(username){
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
-    console.log(response);
     $('.userAva').empty();
     $('.userAva').append('<img src=' + response.avatar_url + "'>");
     $('.usernameDisplay').text(response.name);
@@ -22,7 +21,6 @@ exports.gitCall = function(username){
 };
 exports.getRepos = function(username){
   $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(response){
-    console.log(response[3].description);
     $('.getRepos').hide();
     $('.repoWrap').show();
     $('.repos').show();

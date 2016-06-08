@@ -2,7 +2,7 @@
 # Github API Project
 Simple app to pull down a git hub user and display their repos.
 ## Installation
-clone repo or download, install dependencies with npm and bower.
+clone repo or download,install dependencies with npm and bower (you may need to install these globally, if you haven't already). You will need an api key. You can insert it into the placeholder in the ".ENV" file. Then from the command line run gulp build and gulp serve.
 ## Usage
 type in a git hub username to display information about them.
 ## Contributing
